@@ -9,7 +9,7 @@ app.get('/',async (req,res)=>{
     const findUsers=await users.find();
     const allusers=[];
     findUsers.forEach((user)=>{
-        allusers.push({_id: user._id , name : user.name , about: user.about , tags:user.tags, joinedOn :user.joinedOn})
+        allusers.push({_id: user._id , name : user.name ,latitude:user.latitude,longitude:user.longitude ,about: user.about , tags:user.tags, joinedOn :user.joinedOn})
     })
     res.status(200).json(allusers)
   } catch (error) {
